@@ -123,10 +123,12 @@ textarea:focus-visible {
 
 .hero {
   position: relative;
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-height: 88svh;
   overflow: hidden;
+  padding: 106px 28px 22px;
   background:
     radial-gradient(circle at 78% 22%, rgba(0, 217, 184, 0.22), transparent 28%),
     radial-gradient(circle at 44% 80%, rgba(255, 79, 100, 0.16), transparent 24%),
@@ -174,8 +176,7 @@ textarea:focus-visible {
   position: relative;
   z-index: 5;
   width: min(760px, calc(100% - 40px));
-  margin-left: max(24px, calc((100vw - 1180px) / 2));
-  padding-top: 90px;
+  margin: auto auto 58px max(0px, calc((100vw - 1180px) / 2 - 28px));
 }
 
 .eyebrow,
@@ -260,13 +261,11 @@ textarea:focus-visible {
 }
 
 .signal-strip {
-  position: absolute;
-  right: 28px;
-  bottom: 22px;
-  left: 28px;
+  position: relative;
   z-index: 4;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(8, 8, 8, 0.5);
   backdrop-filter: blur(18px);
@@ -648,13 +647,12 @@ textarea:focus-visible {
 
   .hero {
     min-height: 90svh;
+    padding: 76px 16px 14px;
   }
 
   .hero-content {
-    width: calc(100% - 32px);
-    margin: 0 auto;
-    padding-top: 76px;
-    padding-bottom: 176px;
+    width: 100%;
+    margin: auto 0 42px;
   }
 
   .hero h1 {
@@ -672,9 +670,6 @@ textarea:focus-visible {
   }
 
   .signal-strip {
-    right: 16px;
-    bottom: 14px;
-    left: 16px;
     grid-template-columns: 1fr;
   }
 
