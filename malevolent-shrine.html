@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Simulação 3D interativa do Malevolent Shrine (伏魔御廚子), o Domínio de Ryomen Sukuna. Geometria 100% procedural em Three.js, sem modelos externos."
+    />
+    <meta name="theme-color" content="#0a0304" />
+    <title>伏魔御廚子 · Malevolent Shrine — Simulação 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+JP:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="stage" class="stage">
+      <canvas id="shrine-canvas" aria-label="Simulação 3D do Malevolent Shrine" role="img"></canvas>
+
+      <div class="webgl-fallback" role="status">
+        <h1>伏魔御廚子</h1>
+        <p>
+          Este navegador não conseguiu iniciar o WebGL, então o domínio não pode
+          ser aberto aqui. Tente um navegador atualizado com aceleração de vídeo
+          ligada.
+        </p>
+      </div>
+
+      <header class="top-bar">
+        <div class="title-block">
+          <p class="kanji-small">領域展開</p>
+          <h1>伏魔御廚子</h1>
+          <p class="subtitle">Malevolent Shrine · Domínio de Ryomen Sukuna</p>
+        </div>
+        <a class="back-link" href="./index.html">← voltar ao site</a>
+      </header>
+
+      <div id="intro" class="intro" data-stage="0" aria-hidden="true">
+        <div class="intro-inner">
+          <p class="intro-line line-1">領域展開</p>
+          <p class="intro-line line-2">伏魔御廚子</p>
+          <p class="intro-line line-3">Malevolent Shrine</p>
+        </div>
+        <button id="skip-intro" class="skip" type="button">pular abertura (Esc)</button>
+      </div>
+
+      <aside id="panel" class="panel" aria-label="Controles da simulação">
+        <button id="toggle-panel" class="panel-handle" type="button" aria-label="Recolher ou abrir o painel">
+          <span></span>
+        </button>
+
+        <div class="panel-body">
+          <section class="panel-section">
+            <h2>Câmeras</h2>
+            <div class="chip-row">
+              <button class="chip is-active" type="button" data-camera="dominio">1 · Domínio</button>
+              <button class="chip" type="button" data-camera="ritual">2 · Ritual</button>
+              <button class="chip" type="button" data-camera="lateral">3 · Lateral</button>
+              <button class="chip" type="button" data-camera="aerea">4 · Aérea</button>
+              <button class="chip" type="button" data-camera="cranio">5 · Crânio</button>
+            </div>
+          </section>
+
+          <section class="panel-section">
+            <h2>Domínio</h2>
+            <div class="switch-grid">
+              <button id="toggle-rotate" class="switch" type="button" aria-pressed="true">
+                <span class="dot"></span> Órbita automática
+              </button>
+              <button id="toggle-cleave" class="switch" type="button" aria-pressed="true">
+                <span class="dot"></span> Desmantelar
+              </button>
+              <button id="toggle-embers" class="switch" type="button" aria-pressed="true">
+                <span class="dot"></span> Brasas e cinza
+              </button>
+              <button id="toggle-bloom" class="switch" type="button" aria-pressed="true">
+                <span class="dot"></span> Brilho (bloom)
+              </button>
+            </div>
+          </section>
+
+          <section class="panel-section">
+            <h2>Ações</h2>
+            <div class="chip-row">
+              <button id="replay" class="chip" type="button">Reabrir domínio</button>
+              <button id="capture" class="chip" type="button">Capturar PNG</button>
+              <button id="fullscreen" class="chip" type="button">Tela cheia</button>
+            </div>
+          </section>
+
+          <p class="panel-note">
+            Arraste para orbitar · rolagem para aproximar · dois dedos para deslocar
+          </p>
+        </div>
+      </aside>
+
+      <div class="hud" aria-hidden="true">
+        <span id="fps">— fps</span>
+        <span id="info-verts">carregando…</span>
+        <span class="hud-tag">geometria procedural · Three.js</span>
+      </div>
+
+      <div id="loader" class="loader">
+        <div class="loader-inner">
+          <p class="loader-kanji">伏魔御廚子</p>
+          <div class="loader-track"><div id="loader-bar" class="loader-bar"></div></div>
+          <p id="loader-status" class="loader-status">Iniciando…</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/shrine/main.js"></script>
+  </body>
+</html>

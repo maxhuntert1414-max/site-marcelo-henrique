@@ -1,3 +1,4 @@
 node_modules/
 dist/
 .verification/
+dist-standalone/
