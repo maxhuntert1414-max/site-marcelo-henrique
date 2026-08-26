@@ -355,6 +355,11 @@ body.is-intro .stage.is-ready .panel {
   transition: all 0.22s ease;
 }
 
+.chip[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
 .chip:hover {
   color: var(--ink);
   border-color: rgba(255, 122, 74, 0.5);

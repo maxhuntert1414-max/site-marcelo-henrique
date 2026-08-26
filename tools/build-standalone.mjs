@@ -65,7 +65,7 @@ async function main() {
     .replace(/\n\s*<script[\s\S]*?<\/script>/g, '')
     .trim();
 
-  const title = '伏魔御廚子 · Malevolent Shrine — Simulação 3D';
+  const title = '伏魔御廚子 · Malevolent Shrine';
   const description =
     'Simulação 3D interativa do Malevolent Shrine (伏魔御廚子), o Domínio de Ryomen Sukuna. Geometria 100% procedural em Three.js.';
 

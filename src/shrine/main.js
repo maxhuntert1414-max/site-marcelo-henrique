@@ -444,9 +444,11 @@ async function boot() {
     finishIntro();
   });
 
+  // Embutida em outro site não há downloads nem página irmã para voltar
   const captureButton = $('#capture');
   if (isEmbedded) {
     captureButton?.remove();
+    $('.back-link')?.remove();
   } else {
     captureButton?.addEventListener('click', () => {
       composer.render();
@@ -459,8 +461,14 @@ async function boot() {
   }
 
   $('#fullscreen')?.addEventListener('click', () => {
-    if (document.fullscreenElement) document.exitFullscreen();
-    else document.documentElement.requestFullscreen?.();
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+      return;
+    }
+    // Em iframe o pedido pode ser recusado; não vale quebrar por isso
+    document.documentElement.requestFullscreen?.().catch(() => {
+      $('#fullscreen')?.setAttribute('disabled', '');
+    });
   });
 
   const panel = $('#panel');
