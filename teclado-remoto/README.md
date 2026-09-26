@@ -8,6 +8,11 @@ transferência e um touchpad para o mouse.
 
 <p align="center"><img src="docs/icone.png" width="96" alt="Ícone do Teclado Remoto"></p>
 
+![Telas do app no celular e do programa no PC](docs/telas.png)
+
+<sub>Capturas reais dos testes: o app no Android e o programa do PC, com o texto digitado
+pelo celular chegando ao Bloco de Notas.</sub>
+
 ## Destaques
 
 - **Leve** — o app tem ~80 KB e o programa do PC ~0,7 MB, sem instalador, sem .NET,
