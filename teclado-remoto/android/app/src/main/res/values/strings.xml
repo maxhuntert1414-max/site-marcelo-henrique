@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Teclado Remoto</string>
+    <string name="subtitle">Digite no celular e o texto aparece no PC.</string>
+    <string name="computers">Computadores</string>
+    <string name="scan">Procurar</string>
+    <string name="empty_hint">Nenhum PC encontrado ainda.\n\nNo computador, abra o Teclado Remoto (Windows). Celular e PC precisam estar na mesma rede Wi-Fi.</string>
+    <string name="manual">Conectar pelo endereço IP</string>
+    <string name="input_hint">Digite aqui…</string>
+    <string name="send">Enviar</string>
+    <string name="mode">Ao vivo</string>
+    <string name="toggle_keyboard">Mostrar ou esconder o teclado</string>
+    <string name="menu">Mais opções</string>
+    <string name="mouse_left">Esquerdo</string>
+    <string name="mouse_middle">Meio</string>
+    <string name="mouse_right">Direito</string>
+    <string name="keyboard_symbol" translatable="false">⌨</string>
+    <string name="menu_symbol" translatable="false">⋮</string>
+    <string name="touchpad_hint">Arraste para mover · toque para clicar · dois dedos para rolar ou clique direito</string>
+</resources>

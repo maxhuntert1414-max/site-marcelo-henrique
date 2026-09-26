@@ -14,3 +14,9 @@ npm run dev
 ```powershell
 npm run build
 ```
+
+## Teclado Remoto
+
+A pasta [`teclado-remoto/`](teclado-remoto/) tem um app separado: use o teclado do
+celular (Android) para digitar no PC (Windows). Veja o
+[README do Teclado Remoto](teclado-remoto/README.md).

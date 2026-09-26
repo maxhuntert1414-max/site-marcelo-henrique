@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#0F1115</color>
+    <color name="surface">#181B22</color>
+    <color name="key">#252933</color>
+    <color name="key_ripple">#4B5263</color>
+    <color name="key_once">#1E2F57</color>
+    <color name="accent">#3B82F6</color>
+    <color name="text">#E8EAED</color>
+    <color name="text_dim">#9AA1AC</color>
+    <color name="ok">#22C55E</color>
+    <color name="wait">#EAB308</color>
+    <color name="error">#EF4444</color>
+    <color name="launcher_bg">#2563EB</color>
+</resources>
