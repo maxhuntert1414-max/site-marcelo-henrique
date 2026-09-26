@@ -16,7 +16,8 @@ pelo celular chegando ao Bloco de Notas.</sub>
 ## Destaques
 
 - **Leve** — o app tem ~80 KB e o programa do PC ~0,7 MB, sem instalador, sem .NET,
-  Java ou bibliotecas extras. Nenhum dos dois usa CPU enquanto você não digita.
+  Java ou bibliotecas extras. Parados, os dois praticamente não usam CPU (só um sinal
+  de vida a cada 2 segundos).
 - **Rápido** — conexão TCP direta na rede local, sem atraso de Nagle, uma mensagem por
   pacote e o Wi‑Fi do celular em modo de baixa latência enquanto o app está aberto.
   A latência aparece no topo da tela.
