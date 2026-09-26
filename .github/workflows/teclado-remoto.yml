@@ -39,6 +39,12 @@ jobs:
           cargo build --release --locked
           Copy-Item target/release/teclado-remoto.exe TecladoRemoto.exe
 
+      - name: Conferir que roda sem o Visual C++ Redistributable
+        run: |
+          if (Select-String -Path TecladoRemoto.exe -Pattern 'vcruntime140' -SimpleMatch -Quiet) {
+            throw "O .exe depende do vcruntime140.dll (o runtime C deveria estar embutido)"
+          }
+
       - uses: actions/upload-artifact@v4
         with:
           name: TecladoRemoto-Windows

@@ -1,0 +1,7 @@
+# Runtime C embutido no .exe: roda em qualquer Windows 10/11 sem precisar do
+# "Visual C++ Redistributable" (vcruntime140.dll).
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.aarch64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
