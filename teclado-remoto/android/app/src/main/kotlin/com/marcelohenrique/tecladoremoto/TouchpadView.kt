@@ -108,7 +108,7 @@ class TouchpadView(context: Context, attrs: AttributeSet?) : View(context, attrs
         val y = dy / density
         // Devagar = precisão; rápido = atravessa a tela.
         val speed = hypot(x, y) / dt
-        val gain = 1.3f + min(speed, 2.5f) * 1.7f
+        val gain = 1.6f + min(speed, 3f) * 1.8f
         restX += x * gain
         restY += y * gain
         val ix = restX.toInt()

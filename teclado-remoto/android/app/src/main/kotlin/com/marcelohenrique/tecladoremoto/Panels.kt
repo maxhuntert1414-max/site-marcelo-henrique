@@ -109,7 +109,8 @@ object Panels {
                 Section(
                     "Reprodução", 4,
                     listOf(
-                        tap("⏮", Vk.MEDIA_PREV), tap("⏯", Vk.MEDIA_PLAY_PAUSE), tap("⏭", Vk.MEDIA_NEXT), tap("⏹", Vk.MEDIA_STOP),
+                        tap("⏮ Anterior", Vk.MEDIA_PREV), tap("⏯ Tocar", Vk.MEDIA_PLAY_PAUSE),
+                        tap("⏭ Próxima", Vk.MEDIA_NEXT), tap("⏹ Parar", Vk.MEDIA_STOP),
                     ),
                 ),
                 Section(

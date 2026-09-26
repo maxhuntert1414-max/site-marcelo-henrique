@@ -1,6 +1,7 @@
 package com.marcelohenrique.tecladoremoto
 
 import android.content.Context
+import android.graphics.Typeface
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
@@ -87,6 +88,8 @@ class CaptureEditText(context: Context, attrs: AttributeSet?) : EditText(context
             Mode.COMPOSE -> InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_AUTO_CORRECT or
                 InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
         }
+        // O tipo "senha visível" troca a fonte para monoespaçada; volta para a normal.
+        typeface = Typeface.DEFAULT
         maxLines = if (mode == Mode.LIVE) 3 else 1
         muted = false
         resetBuffer()

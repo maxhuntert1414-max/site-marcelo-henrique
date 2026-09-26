@@ -356,7 +356,8 @@ class MainActivity : Activity(), RemoteClient.Listener, CaptureEditText.Sink {
         }, "endereco").start()
     }
 
-    private fun pair(host: String, port: Int, name: String) {
+    /** [replaces]: id do PC salvo que este pareamento substitui (o PC foi reinstalado/esqueceu o celular). */
+    private fun pair(host: String, port: Int, name: String, replaces: String? = null) {
         stopScanUi()
         val status = TextView(this).apply {
             text = "Conectando a $name…"
@@ -403,6 +404,7 @@ class MainActivity : Activity(), RemoteClient.Listener, CaptureEditText.Sink {
                 )
                 val session = result.session
                 val server = SavedServer(Crypto.hex(session.serverId), session.serverName.ifEmpty { name }, host, port, result.pairKey)
+                if (replaces != null && replaces != server.id) store.remove(replaces)
                 store.save(server)
                 runOnUiThread {
                     progress.dismiss()
@@ -667,7 +669,8 @@ class MainActivity : Activity(), RemoteClient.Listener, CaptureEditText.Sink {
     private fun quickButton(label: String): Button {
         val b = Button(this, null, 0, R.style.Key)
         b.text = label
-        b.textSize = 13f
+        // Símbolos (⇧ ⊞ setas) ficam legíveis um pouco maiores que as palavras.
+        b.textSize = if (label.length == 1) 17f else 13f
         b.minHeight = dp(42)
         b.setPadding(0, 0, 0, 0)
         quickRow.addView(b, LinearLayout.LayoutParams(0, dp(44), 1f).apply { setMargins(dp(2), dp(2), dp(2), dp(2)) })
@@ -912,7 +915,7 @@ class MainActivity : Activity(), RemoteClient.Listener, CaptureEditText.Sink {
                 dialog()
                     .setTitle("Parear de novo")
                     .setMessage("O computador ${server.name} não reconhece mais este celular (o pareamento foi removido no PC). Quer parear de novo?")
-                    .setPositiveButton("Parear") { _, _ -> pair(server.host, server.port, server.name) }
+                    .setPositiveButton("Parear") { _, _ -> pair(server.host, server.port, server.name, replaces = server.id) }
                     .setNegativeButton("Voltar") { _, _ -> showConnect() }
                     .setCancelable(false)
                     .show()
@@ -938,7 +941,7 @@ class MainActivity : Activity(), RemoteClient.Listener, CaptureEditText.Sink {
     override fun onNotice(text: String) = toast(text, long = true)
 
     private companion object {
-        const val ALT_TAB_HOLD_MS = 1300L
+        const val ALT_TAB_HOLD_MS = 1800L
         const val MENU_SWITCH = 1
         const val MENU_RELEASE = 2
         const val MENU_SCREEN = 3
